@@ -13,27 +13,32 @@
 <div class="container-fluid" ng-controller="BeeController">
     <h1>{{enemies.length}} Bees Left</h1>
 
-    <div class="row">
-        <div class="col-xs-3" ng-repeat="enemy in enemies">
-            <h3 class="name-bee">{{enemy.type}}</h3>
+    <div class="row text-center">
+        <div ng-class="{'col-sm-12': enemy.type === 'queen', 'col-sm-2': enemy.type === 'worker' || enemy.type === 'drone'}"
+             ng-repeat="enemy in enemies">
+            <h3 class="text-uppercase">{{enemy.type}}</h3>
       <span class="health-points">
           Health: {{enemy.life}}
-          <span class="text-danger fadein fadeout"
+          <span class="is-hit text-danger fadeout"
                 ng-show="enemy.isHit">-{{enemy.hitPoints}}</span></span>
         </div>
     </div>
-    <button class="btn btn-danger btn-fire"
-            ng-click="shootRandomEnemy()"
-            ng-show="!gameOver">Fire
-    </button>
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <button class="btn btn-danger btn-fire text-uppercase"
+                    ng-click="shootRandomEnemy()"
+                    ng-show="!gameOver">Fire
+            </button>
 
-    <div ng-show="gameOver">
-        You Win!
+            <div ng-show="gameOver">
+                You Win!
+            </div>
+            <button class="btn btn-success text-uppercase"
+                    ng-click="setupGame()"
+                    ng-show="gameOver">Reset
+            </button>
+        </div>
     </div>
-    <button class="btn btn-success"
-            ng-click="setupGame()"
-            ng-show="gameOver">Reset
-    </button>
 </div>
 
 <!-- bower:js -->

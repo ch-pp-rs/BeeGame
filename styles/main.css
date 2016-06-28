@@ -1,10 +1,5 @@
-.name-bee {
-    text-transform: uppercase;
-}
-
 .btn-fire {
     margin-top: 20px;
-    text-transform: uppercase;
 }
 
 .health-points {
@@ -12,7 +7,10 @@
     font-weight: bold;
 }
 
-.fadein.ng-hide-remove,
+.is-hit {
+    position: absolute;
+}
+
 .fadeout.ng-hide-add {
     -webkit-transition: 400ms ease-in-out all;
     -moz-transition: 400ms ease-in-out all;
@@ -20,12 +18,10 @@
     transition: 400ms ease-in-out all;
 }
 
-.fadein.ng-hide-remove,
 .fadeout.ng-hide-add.ng-hide-add-active {
     opacity: 0;
 }
 
-.fadeout.ng-hide-add,
-.fadein.ng-hide-remove.ng-hide-remove-active {
+.fadeout.ng-hide-add {
     opacity: 1;
 }
