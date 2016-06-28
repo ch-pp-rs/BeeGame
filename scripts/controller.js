@@ -23,7 +23,7 @@ angular.module('beeGame', ['ngAnimate']).controller('BeeController', function ($
 
   $scope.setupGame = function () {
     $scope.enemies = [];
-    $scope.enemies.push(queenBee);
+    $scope.enemies.push(angular.copy(queenBee));
 
     angular.forEach(children, function (childBee) {
       for (var i = 0; i < childBee.quantity; i += 1) {
