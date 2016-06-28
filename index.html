@@ -14,7 +14,7 @@
     <h1>{{enemies.length}} Bees Left</h1>
 
     <div class="row text-center">
-        <div ng-class="{'col-sm-12': enemy.type === 'queen', 'col-sm-2': enemy.type === 'worker' || enemy.type === 'drone'}"
+        <div ng-class="{'col-sm-12': enemy.type === 'queen', 'col-sm-2': enemy.type === 'worker' || enemy.type === 'drone', 'text-danger': enemy.isHit}"
              ng-repeat="enemy in enemies">
             <h3 class="text-uppercase">{{enemy.type}}</h3>
 
