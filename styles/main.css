@@ -25,3 +25,8 @@
 .fadeout.ng-hide-add {
     opacity: 1;
 }
+
+.text-congratulations {
+    font-size: 36px;
+    padding-bottom: 20px;
+}

@@ -32,12 +32,13 @@
                     ng-show="!gameOver">Fire
             </button>
 
-            <div ng-show="gameOver">
-                You Win!
+            <div class="text-uppercase text-congratulations"
+                 ng-show="gameOver">
+                Congratulations! You beat the bees.
             </div>
             <button class="btn btn-success text-uppercase"
                     ng-click="setupGame()"
-                    ng-show="gameOver">Reset
+                    ng-show="gameOver">Play Again
             </button>
         </div>
     </div>
