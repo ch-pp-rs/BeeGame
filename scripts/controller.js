@@ -42,7 +42,7 @@ angular.module('beeGame', ['ngAnimate']).controller('BeeController', function ($
 
     $scope.enemies[hitIndex].isHit = true;
     $timeout(function () {
-      if ($scope.enemies[hitIndex].isHit == true) {
+      if ($scope.enemies[hitIndex]) {
         $scope.enemies[hitIndex].isHit = false;
       }
     }, 3000);
