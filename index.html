@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body ng-app="beeGame">
+
+<div class="container-fluid" ng-controller="BeeController">
+    <h1>{{enemies.length}} Bees Left</h1>
+
+    <div class="row">
+        <div class="col-xs-3" ng-repeat="enemy in enemies">
+            <h3 class="name-bee">{{enemy.type}}</h3>
+      <span class="health-points">
+          Health: {{enemy.life}}
+          <span class="text-danger fadein fadeout"
+                ng-show="enemy.isHit">-{{enemy.hitPoints}}</span></span>
+        </div>
+    </div>
+    <button class="btn btn-danger btn-fire"
+            ng-click="shootRandomEnemy()"
+            ng-show="!gameOver">Fire
+    </button>
+
+    <div ng-show="gameOver">
+        You Win!
+    </div>
+    <button class="btn btn-success"
+            ng-click="setupGame()"
+            ng-show="gameOver">Reset
+    </button>
+</div>
+
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- endbower -->
+
+<script src="scripts/controller.js"></script>
+
+</body>
+</html>
