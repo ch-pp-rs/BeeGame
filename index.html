@@ -17,10 +17,12 @@
         <div ng-class="{'col-sm-12': enemy.type === 'queen', 'col-sm-2': enemy.type === 'worker' || enemy.type === 'drone'}"
              ng-repeat="enemy in enemies">
             <h3 class="text-uppercase">{{enemy.type}}</h3>
-      <span class="health-points">
-          Health: {{enemy.life}}
-          <span class="is-hit text-danger fadeout"
-                ng-show="enemy.isHit">-{{enemy.hitPoints}}</span></span>
+
+            <span class="health-points">
+                <span class="glyphicon glyphicon-heart"></span> {{enemy.life}}
+                <span class="is-hit text-danger fadeout"
+                      ng-show="enemy.isHit">-{{enemy.hitPoints}}</span>
+            </span>
         </div>
     </div>
     <div class="row">
